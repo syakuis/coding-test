@@ -19,11 +19,11 @@ internal class ValidPalindromeTest: BehaviorSpec() {
                 fun isValidPalindrome(): Boolean {
                     val pureText = text.replace("[^a-zA-Z0-9]".toRegex(), "").lowercase()
                     log.debug { pureText }
-                    val len = pureText.length
+                    val len = pureText.length - 1
 
-                    for (i in 0 until len) {
+                    for (i in 0..len) {
                         val now = pureText[i]
-                        val last = pureText[len - (i + 1)]
+                        val last = pureText[len - i]
                         log.debug { "$now == $last" }
                         if (now != last) {
                             return false
