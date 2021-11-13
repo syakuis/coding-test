@@ -61,9 +61,14 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-test:${kotlinVersion}"
     implementation "org.jetbrains.kotlin:kotlin-test-junit5:${kotlinVersion}"
 
+    implementation "org.slf4j:slf4j-api:1.7.32"
+    implementation "ch.qos.logback:logback-classic:1.2.7"
+    implementation "ch.qos.logback:logback-core:1.2.7"
+
     testImplementation "io.kotest:kotest-runner-junit5-jvm:${kotestVersion}"
     testImplementation "io.kotest:kotest-assertions-core-jvm:${kotestVersion}"
     testImplementation "io.kotest:kotest-property-jvm:${kotestVersion}"
+    testImplementation 'io.github.microutils:kotlin-logging-jvm:2.0.10'
 }
 
 sonarqube {
