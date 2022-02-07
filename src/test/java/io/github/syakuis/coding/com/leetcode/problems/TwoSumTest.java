@@ -27,6 +27,6 @@ class TwoSumTest {
     @Test
     void map() {
         assertArrayEquals(new int[]{0,1}, twoSum.map(nums, 9));
-        assertArrayEquals(new int[]{0, 2}, twoSum.map(nums2, 6));
+        assertArrayEquals(new int[]{0,2}, twoSum.map(nums2, 6));
     }
 }

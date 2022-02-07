@@ -29,18 +29,18 @@ public class TwoSum {
     }
 
     public int[] map(int[] nums, int target) {
-        Map<Integer, int[]> store = new HashMap<>();
+        Map<Integer, Integer> store = new HashMap<>();
 
         int count = nums.length;
         for(int i = 0; i < count; i++) {
-            for(int x = i + 1; x < count; x++) {
-                int sum = nums[i] + nums[x];
-                if (!store.containsKey(sum)) {
-                    store.put(sum, new int[]{i, x});
-                }
+
+            if (store.containsKey(nums[i])) {
+                return new int[]{store.get(nums[i]), i};
+            } else {
+                store.put(target - nums[i], i);
             }
         }
 
-        return store.get(target);
+        return null;
     }
 }
