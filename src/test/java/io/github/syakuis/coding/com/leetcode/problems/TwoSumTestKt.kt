@@ -38,11 +38,17 @@ class TwoSumTestKt : BehaviorSpec() {
             }
 
             When("in을 이용한 탐색") {
+                // (1) 입력된 값을 두 수의 합에서 뺀다
+                // (2) 입력된 값에서 뺀 값을 찾는 다.
+                // (3) 입력된 값의 인덱스와 뺀 값의 인덱스를 구해서 반환한다.
                 fun obtain(): List<Int> {
                     for (i in nums.indices) {
+                        // (1)
                         val num = target - nums[i]
 
+                        // (2)
                         if (nums.drop(i + 1).contains(num)) {
+                            // (3)
                             return listOf(i, nums.indexOf(num))
                         }
                     }
